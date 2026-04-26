@@ -56,3 +56,9 @@ checklist-run:
 	export POSTGRES_HOST=localhost && \
 	sudo go mod tidy && \
 	go run ${PROJECT_ROOT}/cmd/checklist/main.go
+checklist-deploy:
+	@docker compose up -d --build checklist
+checklist-undeploy:
+	@docker compose down checklist
+ps:
+	@docker compose ps
